@@ -16,5 +16,3 @@ Clear team-based chat formatting improves communication and immersion for player
 
 **Usage**
 Simply install the plugin on your server, assign players to scoreboard teams, and chat formatting will update instantly based on their team settings.
-
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/u448Dp13wH0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
