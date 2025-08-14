@@ -1,7 +1,7 @@
 name: TeamChatPrefix
 version: 1.0
-main: de.beqare.teamchatprefix.TeamChatPrefix
+main: de.beqare.teamChatPrefix.TeamChatPrefix
 api-version: 1.21
 author: beqare
-description: Change the Chat Format to the Vanilla Team Prefix / Color
-website: https://jonasgrimm.de
+description: Plugin to use Team Prefix/Color for chat format!
+website: https://github.com/beqare/TeamChatPrefix

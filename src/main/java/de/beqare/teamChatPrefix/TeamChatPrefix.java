@@ -1,4 +1,4 @@
-package de.beqare.teamchatprefix;
+package de.beqare.teamChatPrefix;
 
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.entity.Player;
@@ -27,16 +27,16 @@ public final class TeamChatPrefix extends JavaPlugin implements Listener {
         Team team = player.getScoreboard().getEntryTeam(player.getName());
 
         String prefix = "";
+        String suffix = "";
         ChatColor color = ChatColor.WHITE;
 
         if (team != null) {
             prefix = team.getPrefix();
-            if (team.getColor() != null) {
-                color = team.getColor();
-            }
+            suffix = team.getSuffix();
+            color = team.getColor();
         }
 
-        String format = color + prefix + "%1$s" + ChatColor.DARK_GRAY + " » " + ChatColor.GRAY + "%2$s";
+        String format = color + prefix + "%1$s" + suffix + ChatColor.DARK_GRAY + " » " + ChatColor.GRAY + "%2$s";
 
         event.setFormat(format);
     }
