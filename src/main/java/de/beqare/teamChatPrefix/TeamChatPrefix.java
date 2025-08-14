@@ -12,13 +12,13 @@ public final class TeamChatPrefix extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-        getLogger().info("TeamChatPrefix enabled!");
+        getLogger().info("TeamChatPrefix enabled");
         getServer().getPluginManager().registerEvents(this, this);
     }
 
     @Override
     public void onDisable() {
-        getLogger().info("TeamChatPrefix disabled!");
+        getLogger().info("TeamChatPrefix disabled");
     }
 
     @EventHandler
