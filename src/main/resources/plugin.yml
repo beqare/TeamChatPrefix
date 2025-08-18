@@ -5,3 +5,15 @@ api-version: 1.21
 author: beqare
 description: Plugin to use Team Prefix/Color for chat format!
 website: https://github.com/beqare/TeamChatPrefix
+load: POSTWORLD
+prefix: TCP
+commands:
+  tcp:
+    description: Main command for TeamChatPrefix
+    aliases: [teamchatprefix]
+    usage: /tcp reload
+
+permissions:
+  teamchatprefix.reload:
+    description: Allows reloading the plugin config
+    default: op
