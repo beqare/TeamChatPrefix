@@ -18,4 +18,4 @@ Clear team-based chat formatting improves communication and immersion for player
 **Usage**  
 Simply install the plugin on your server, assign players to scoreboard teams, and chat formatting will update instantly based on their team settings. Use `/tcp reload` to reload config changes without restarting the server.
 
-<a href="https://www.youtube-nocookie.com/embed/u448Dp13wH0">View demo here</a>
+<a href="https://www.youtube.com/watch?v=u448Dp13wH0">Watch demo here</a>
