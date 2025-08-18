@@ -1,0 +1,10 @@
+# %playername% - Playername
+# %team% - Teamname
+# %prefix% - Team-prefix
+# %suffix% - Team-suffix
+# %teamcolor% - Team-color
+# %message% - message
+
+format: "%teamcolor%%prefix%%playername%%suffix%§8 » §7%message%"
+use-team-color: true
+default-color: "§f"

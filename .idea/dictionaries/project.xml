@@ -3,6 +3,10 @@
     <words>
       <w>beqare</w>
       <w>nachricht</w>
+      <w>playername</w>
+      <w>standardwerte</w>
+      <w>teamcolor</w>
+      <w>teamname</w>
     </words>
   </dictionary>
 </component>
