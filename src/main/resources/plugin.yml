@@ -1,5 +1,5 @@
 name: TeamChatPrefix
-version: 1.1
+version: 1.2
 main: de.beqare.teamChatPrefix.TeamChatPrefix
 api-version: 1.21
 author: beqare
@@ -11,7 +11,7 @@ commands:
   tcp:
     description: Main command for TeamChatPrefix
     aliases: [teamchatprefix]
-    usage: /tcp reload
+    usage: /tcp <reload|version>
 
 permissions:
   teamchatprefix.reload:

@@ -20,6 +20,7 @@ public final class TeamChatPrefix extends JavaPlugin implements Listener, Comman
     private String chatFormat;
     private boolean useTeamColor;
     private ChatColor defaultColor;
+    private Updater updater;
 
     @Override
     public void onEnable() {
@@ -28,6 +29,9 @@ public final class TeamChatPrefix extends JavaPlugin implements Listener, Comman
         getServer().getPluginManager().registerEvents(this, this);
         Objects.requireNonNull(getCommand("tcp")).setExecutor(this);
         getLogger().info("TeamChatPrefix enabled");
+
+        updater = new Updater(this, "teamchatprefix");
+        updater.checkForUpdates();
     }
 
     private void loadConfig() {
@@ -42,7 +46,9 @@ public final class TeamChatPrefix extends JavaPlugin implements Listener, Comman
 
         chatFormat = Objects.requireNonNull(config.getString("format"));
         useTeamColor = config.getBoolean("use-team-color");
-        defaultColor = ChatColor.getByChar(Objects.requireNonNull(config.getString("default-color")).replace("§", "").charAt(0));
+        defaultColor = ChatColor.getByChar(
+                Objects.requireNonNull(config.getString("default-color")).replace("§", "").charAt(0)
+        );
     }
 
     @Override
@@ -62,8 +68,27 @@ public final class TeamChatPrefix extends JavaPlugin implements Listener, Comman
                     getLogger().severe("Error reloading config: " + e.getMessage());
                 }
                 return true;
+            } else if (args.length == 1 && args[0].equalsIgnoreCase("version")) {
+                String current = getDescription().getVersion();
+                String latest = updater.getLatestVersion();
+
+                sender.sendMessage(ChatColor.YELLOW + "TeamChatPrefix version info:");
+                sender.sendMessage(ChatColor.GRAY + " - Current: " + ChatColor.AQUA + current);
+
+                if (latest != null) {
+                    if (latest.equalsIgnoreCase(current)) {
+                        sender.sendMessage(ChatColor.GRAY + " - Latest: " + ChatColor.GREEN + latest + " (up to date ✅)");
+                    } else {
+                        sender.sendMessage(ChatColor.GRAY + " - Latest: " + ChatColor.RED + latest + " (update available!)");
+                        sender.sendMessage(ChatColor.GRAY + "   Download: " + ChatColor.UNDERLINE + "https://modrinth.com/plugin/teamchatprefix");
+                    }
+                } else {
+                    sender.sendMessage(ChatColor.RED + " - Could not fetch latest version (check console).");
+                }
+                return true;
             }
-            sender.sendMessage(ChatColor.YELLOW + "Usage: /tcp reload");
+
+            sender.sendMessage(ChatColor.YELLOW + "Usage: /tcp <reload|version>");
             return true;
         }
         return false;
