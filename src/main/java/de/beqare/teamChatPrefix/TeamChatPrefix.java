@@ -72,7 +72,7 @@ public final class TeamChatPrefix extends JavaPlugin implements Listener, Comman
                 String current = getDescription().getVersion();
                 String latest = updater.getLatestVersion();
 
-                sender.sendMessage(ChatColor.YELLOW + "TeamChatPrefix version info:");
+                sender.sendMessage(ChatColor.LIGHT_PURPLE + "TeamChatPrefix version info:");
                 sender.sendMessage(ChatColor.GRAY + " - Current: " + ChatColor.AQUA + current);
 
                 if (latest != null) {
